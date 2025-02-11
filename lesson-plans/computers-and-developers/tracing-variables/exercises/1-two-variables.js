@@ -11,14 +11,14 @@
 
 // trace the program a few times with different values
 
-let x = 'Pieter';
-// let x = 'Blake';
-// let x = 'George';
+let x = 'Pieter'; // [x, declare/init, 'Pieter' ]
 
-let y = 'hello ' + x;
+let y = 'hello ' + x; // [x, read, 'Pieter' ] [y, declare/init, 'hello Pieter']
 
-console.log(y);
+console.log(y); // [y, read, 'hello Pieter' ]
 
-y = 'good bye ' + x;
+y = 'good bye ' + x; // [x, read, 'Pieter' ] [y, assign, 'good bye Pieter' ]
 
-console.log(y);
+console.log(y); // [y, read, 'good bye Pieter' ]
+
+// declare, init, assign, read;

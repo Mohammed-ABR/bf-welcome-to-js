@@ -1,13 +1,13 @@
 'use strict';
 
-let a = '*';
+let a = '*'; // [a, declare/init, '*' ]
 // let a = '<>';
 // let a = '|-|';
 // let a = '';
 
-let b = '';
+let b = ''; // [b, declare/init, '' ]
 while (b.length < a.length * 3) {
-  b = b + a;
+  b = b + a; // [a, read, '*' ] [b, read, '' ] [b, write, '*' ]
 }
 
-console.log(b);
+console.log(b); // [b, read, '***' ]

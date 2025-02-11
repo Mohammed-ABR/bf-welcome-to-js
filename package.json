@@ -23,6 +23,7 @@
     "prettier": "^2.3.2"
   },
   "dependencies": {
+    "license": "^1.0.3",
     "study-lenses": "^0.0.179"
   }
 }
