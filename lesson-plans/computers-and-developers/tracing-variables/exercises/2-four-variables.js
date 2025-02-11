@@ -11,20 +11,20 @@
 
 // trace the program a few times with different values
 
-let a = 'Pieter';
+let a = 'Pieter'; // [a, declare/init, 'Pieter' ]
 // let a = 'Blake';
 // let a = 'George';
 
-let b = 'Rabbit';
+let b = 'Rabbit'; // [b, declare/init, 'Rabbit' ]
 // let b = 'Wozzeck';
 // let b = 'Schoenberg';
 
-let c = a + ' ' + b;
+let c = a + ' ' + b; // [a, read, 'Pieter' ] [b, read, 'Rabbit' ] [c, declare/init, 'Pieter Rabbit' ]
 
-let d = 'hello ' + c;
+let d = 'hello ' + c; // [c, read, 'Pieter Rabbit' ] [d, declare/init, 'hello Pieter Rabbit' ]
 
-console.log(d);
+console.log(d); // [d,read, 'hello Pieter Rabbit' ]
 
-d = 'good bye ' + c;
+d = 'good bye ' + c; // [c, read, 'Pieter Rabbit' ] [d, assign, 'good bye Pieter Rabbit' ]
 
-console.log(d);
+console.log(d); // [d, read, 'good bye Pieter Rabbit' ]

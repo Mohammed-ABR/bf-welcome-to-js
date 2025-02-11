@@ -9,17 +9,17 @@
 
 */
 
-let a = 'y';
-let b = 'x';
-let t = '';
+let a = 'y'; // declare and initialize `a` to 'y'
+let b = 'x'; // declare and initialize `b` to 'x'
+let t = ''; // declare and initialize `t` to an empty string
 
-console.log(a, b, t);
+console.log(a, b, t); // log the initial values of `a`, `b`, and `t`
 
-t = a;
-a = b;
-b = t;
+t = a; // assign the value of `a` to `t`
+a = b; // assign the value of `b` to `a`
+b = t; // assign the value of `t` back to `b`
 
-console.log(a, b, t);
+console.log(a, b, t); // log the final values of `a`, `b`, and `t`
 
 // what did you do in this program?
 // what are the final values of `a` and `b`?
