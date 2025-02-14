@@ -11,18 +11,17 @@ whenFormDataChanges('input', () => {
 
   // --- read the user's input ---
 
-  let userText = readString('to-mirror');
+  let userText = readString('to-mirror').trim();
+  let separator = readString('separator').trim();
 
   // --- mirror the text ---
 
-  let mirrored = ' | ';
-  for (let char of userText) {
-    mirrored = char + mirrored + char;
-  }
-
+  let mirroredText = userText.split('').reverse().join('');
+  let result =
+    userText.toLowerCase() + ' ' + separator + ' ' + mirroredText.toUpperCase();
   // --- display the result ---
 
-  displayString('output', mirrored);
+  displayString('output', result);
 });
 
 /*  ===== Challenges =====
