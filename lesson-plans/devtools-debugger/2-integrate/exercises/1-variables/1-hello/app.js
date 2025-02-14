@@ -1,10 +1,24 @@
 // these are the only functions you will need
+
 import {
   whenFormDataChanges,
   readString,
   displayString,
 } from '../../../../../../lib/dom-io/index.js';
 
+whenFormDataChanges('user-info', () => {
+  console.log('\n--- form data changed ---');
+
+  const firstName = readString('first-name');
+  const lastName = readString('last-name');
+  console.log(firstName, lastName);
+
+  const message = `Hello ${firstName} ${lastName}!\nGoodbye ${firstName} ${lastName}!`;
+
+  displayString('greeting-output', message);
+});
+
+/*
 whenFormDataChanges('user-info', () => {
   debugger;
 
@@ -24,6 +38,7 @@ whenFormDataChanges('user-info', () => {
 
   displayString('greeting-output', greeting);
 });
+*/
 
 /*  ===== Challenges =====
 

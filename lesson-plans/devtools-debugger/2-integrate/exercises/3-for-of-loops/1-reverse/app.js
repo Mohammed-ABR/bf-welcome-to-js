@@ -10,6 +10,44 @@ whenFormDataChanges('reversify', () => {
 
   console.log('--- form data changed ---');
 
+  let text = readString('to-reverse');
+  let screaming = readBoolean('loud');
+
+  console.log(text, screaming);
+
+  let reversedUnique = '';
+  let seenChars = new Set();
+
+  for (let character of text) {
+    if (!seenChars.has(character)) {
+      seenChars.add(character);
+      reversedUnique = character + reversedUnique;
+    }
+  }
+
+  console.log(reversedUnique);
+
+  let finalText = '';
+
+  if (text.length > 10) {
+    finalText = reversedUnique.toUpperCase();
+  } else if (text.length < 5) {
+    finalText = reversedUnique.toLowerCase();
+  } else {
+    finalText = reversedUnique;
+  }
+
+  console.log(finalText);
+
+  displayString('out', finalText);
+});
+
+/*
+whenFormDataChanges('reversify', () => {
+  debugger;
+
+  console.log('--- form data changed ---');
+
   // --- read user input ---
 
   let text = readString('to-reverse');
@@ -42,6 +80,8 @@ whenFormDataChanges('reversify', () => {
   // display the final text to the <pre> with id "out"
   displayString('out', finalText);
 });
+
+*/
 
 /*  ===== Challenges =====
 

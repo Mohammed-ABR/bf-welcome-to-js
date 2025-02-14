@@ -22,11 +22,9 @@ whenFormDataChanges('search-input', () => {
   let doesExist = false;
 
   if (caseSensitive) {
-    doesExist = searchThis.includes(findThis);
+    doesExist = searchThis.toLowerCase().includes(findThis.toLowerCase());
   } else {
-    let smallSearchThis = searchThis.toLowerCase();
-    let smallFindThis = findThis.toLowerCase();
-    doesExist = smallSearchThis.includes(smallFindThis);
+    doesExist = searchThis.includes(findThis);
   }
 
   // --- create the message ---
@@ -34,9 +32,9 @@ whenFormDataChanges('search-input', () => {
   let message = '';
 
   if (doesExist) {
-    message = 'yes';
+    message = 'Text found';
   } else {
-    message = 'no';
+    message = 'Text not found!';
   }
 
   // --- display the search results ---
